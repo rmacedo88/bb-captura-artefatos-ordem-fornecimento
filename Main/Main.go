@@ -45,6 +45,6 @@ func main() {
 }
 
 /**
-go run Main.go -chave=C1218068 -data=2019-06-01 -repositorio=/media/dev/af397934-0a17-4e0f-9d50-d5146aac487c/home/robson/repos-teste/stt-fluxo-entrega-estatico
+//go run Main.go -chave=C1218068 -data=2019-06-01 -path=/media/dev/af397934-0a17-4e0f-9d50-d5146aac487c/home/robson/repos-teste/stt-fluxo-entrega-estatico
 
 */

@@ -7,13 +7,13 @@ import (
 )
 
 // Contexto (nome do repositório)
-var context string
+var Contexto string
 
 func SetContext(contextoExecucao string) {
 	// Recupera a posição do último separador de arquivo
 	ultimoSeparador := strings.LastIndexByte(contextoExecucao, os.PathSeparator)
 	// Extrai o nome do projeto
-	context = contextoExecucao[ultimoSeparador+1:] + string(os.PathSeparator)
+	Contexto = contextoExecucao[ultimoSeparador+1:] + string(os.PathSeparator)
 }
 
 func Parse(txtLogGit string) *map[string][]LinhaLog {

@@ -1,7 +1,7 @@
 package OrdemFornecimento
 
 // Tipo base do enum
-type EstadoArtefato int
+type EstadoArtefato byte
 
 // Conteúdo do enum
 const (

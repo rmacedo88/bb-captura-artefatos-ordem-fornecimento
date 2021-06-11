@@ -33,7 +33,7 @@ func buildLinhaLog(linha string) *LinhaLog {
 	if len(dadosLinha) == 2 {
 		linhaLog.EstadoAtf = OrdemFornecimento.EstadoArtefatoFromString(dadosLinha[0])
 		linhaLog.Artefato = OrdemFornecimento.BuildNomeArtefato(dadosLinha[1])
-		linhaLog.Projeto = context
+		linhaLog.Projeto = Contexto
 		return &linhaLog
 	}
 
