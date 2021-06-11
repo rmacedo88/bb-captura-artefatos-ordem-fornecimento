@@ -6,7 +6,7 @@ abertas a partir de **01/06/2021** conforme descrito no [manual](https://fontes.
 ## Uso
 
 Baixar o executável correspondente ao seu sistema operacional em **bb-captura-artefatos-ordem-fornecimento/Bin**.
-Existem compilações disponíves para [Windows](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/blob/main/Bin/captura_artefatos_windows_amd64.exe), [Linux](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/blob/main/Bin/captura_artefatos_linux_amd64) e [macOS](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/blob/main/Bin/captura_artefatos_darwin_amd64.dmg).
+Existem compilações disponíves para [Windows](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/releases/download/0.0.2-beta/captura_artefatos_windows_amd64.exe), [Linux](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/releases/download/0.0.2-beta/captura_artefatos_linux_amd64) e [macOS](https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento/releases/download/0.0.2-beta/captura_artefatos_darwin_amd64.dmg).
 
 Antes de qualquer coisa, esta ferramenta depende que o git esteja instalado localmente.
 [Siga as instruções contidas aqui (inglês)](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
