@@ -34,7 +34,9 @@ func Relatorio(listaArtefatos map[string][]GitLog.LinhaLog) {
 		_, _ = escritor.WriteString(titulo[0] + " " + titulo[1] + "\n")
 
 		for _, linhaRelatorio := range lista {
-			_, _ = escritor.WriteString(linhaRelatorio.Projeto + linhaRelatorio.Artefato.String() + linhaRelatorio.Commit + "\n")
+			_, _ = escritor.WriteString(linhaRelatorio.Projeto +
+				linhaRelatorio.Artefato.String() +
+				linhaRelatorio.Commit + "\n")
 		}
 	}
 
