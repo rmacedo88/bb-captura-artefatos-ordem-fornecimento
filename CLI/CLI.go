@@ -1,3 +1,7 @@
+/**
+- Interface de linha de comando permitindo ajustar a chave, data e diretório de trabalho da OF
+*/
+
 package CLI
 
 import (

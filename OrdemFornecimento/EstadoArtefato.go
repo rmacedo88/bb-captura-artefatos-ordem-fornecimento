@@ -1,3 +1,6 @@
+/**
+- Determina o contrado dos estados que o Artefato pode assumir consoante descrição do log do git
+*/
 package OrdemFornecimento
 
 // Tipo base do enum

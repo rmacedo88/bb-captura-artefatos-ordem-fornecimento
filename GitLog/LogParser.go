@@ -1,3 +1,6 @@
+/**
+- Efetua o parsing do log obtido do git
+*/
 package GitLog
 
 import (

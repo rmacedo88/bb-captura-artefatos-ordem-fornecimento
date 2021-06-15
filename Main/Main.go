@@ -1,3 +1,6 @@
+/**
+- Ponto de execução da aplicação
+*/
 package main
 
 import (

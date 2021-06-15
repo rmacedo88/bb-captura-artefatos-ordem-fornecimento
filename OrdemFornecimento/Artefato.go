@@ -1,3 +1,6 @@
+/**
+- Determina o contrado do artefato
+*/
 package OrdemFornecimento
 
 import (

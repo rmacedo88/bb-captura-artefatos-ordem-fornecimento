@@ -1,3 +1,7 @@
+/**
+ - Grava o relatório em disco
+TODO - Consumir os dados de um gerador para aprimorar a performance em múltiplos repositórios
+*/
 package Report
 
 import (
