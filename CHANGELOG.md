@@ -2,7 +2,7 @@
 > Primeira versão
 > 
 ## 0.0.2
-> Gravação do log em disco
+> Gravação do log em arquivo
 
 ## 0.0.3
 > Adição dos testes unitários
