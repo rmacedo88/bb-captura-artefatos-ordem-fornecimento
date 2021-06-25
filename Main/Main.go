@@ -72,7 +72,7 @@ func logPorRepositorio(parms CLI.Parms, caminhoRepositorioAtual string) *[]byte 
 
 func main() {
 
-	Logging.Warning.Println("O uso das informações produzidas por essa ferramenta é de total responsabilidade do utilizador.\n")
+	Logging.Warning.Println("O uso das informações produzidas por essa ferramenta é de total responsabilidade do utilizador.")
 
 	// Captura os parâmetros informados no terminal
 	parms := CLI.Frontend()

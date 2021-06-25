@@ -1,3 +1,6 @@
+/**
+- Determina o contrado do artefato
+*/
 package OrdemFornecimento
 
 import (
@@ -18,7 +21,7 @@ func TestBuildNomeArtefato(t *testing.T) {
 	}
 	for _, tt := range tests {
 		if got := BuildNomeArtefato(tt.args.linha); !reflect.DeepEqual(got, tt.want) {
-			t.Errorf("%q. BuildNomeArtefato() = %v, want %v", tt.name, got, tt.want)
+			t.Errorf("%q. BuildNomeArtefato(%v) = %v, want %v", tt.name, tt.args.linha, got, tt.want)
 		}
 	}
 }

@@ -1,3 +1,6 @@
+/**
+- Grava o relatório em disco
+*/
 package Report
 
 import (
@@ -8,6 +11,7 @@ import (
 func TestRelatorio(t *testing.T) {
 	type args struct {
 		listaArtefatos map[string][]GitLog.LinhaLog
+		chavec         string
 	}
 	tests := []struct {
 		name string
@@ -16,6 +20,6 @@ func TestRelatorio(t *testing.T) {
 		// TODO: Add test cases.
 	}
 	for _, tt := range tests {
-		Relatorio(tt.args.listaArtefatos)
+		Relatorio(tt.args.listaArtefatos, tt.args.chavec)
 	}
 }

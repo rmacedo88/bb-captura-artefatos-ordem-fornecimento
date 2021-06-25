@@ -1,3 +1,6 @@
+/**
+- Ponto de execução da aplicação
+*/
 package main
 
 import (
@@ -18,17 +21,6 @@ func Test_configurarTamanhoHashCommit(t *testing.T) {
 	}
 	for _, tt := range tests {
 		configurarTamanhoHashCommit(tt.args.comandoGit)
-	}
-}
-
-func Test_main(t *testing.T) {
-	tests := []struct {
-		name string
-	}{
-		// TODO: Add test cases.
-	}
-	for range tests {
-		main()
 	}
 }
 
@@ -66,5 +58,16 @@ func Test_logPorRepositorio(t *testing.T) {
 		if got := logPorRepositorio(tt.args.parms, tt.args.caminhoRepositorioAtual); !reflect.DeepEqual(got, tt.want) {
 			t.Errorf("%q. logPorRepositorio(%v, %v) = %v, want %v", tt.name, tt.args.parms, tt.args.caminhoRepositorioAtual, got, tt.want)
 		}
+	}
+}
+
+func Test_main(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		// TODO: Add test cases.
+	}
+	for range tests {
+		main()
 	}
 }

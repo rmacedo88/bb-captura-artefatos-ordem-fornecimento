@@ -1,3 +1,6 @@
+/**
+- Determina o contrado dos estados que o Artefato pode assumir consoante descrição do log do git
+*/
 package OrdemFornecimento
 
 import "testing"
@@ -45,7 +48,7 @@ func TestEstadoArtefatoFromString(t *testing.T) {
 	}
 	for _, tt := range tests {
 		if got := EstadoArtefatoFromString(tt.args.literal); got != tt.want {
-			t.Errorf("%q. EstadoArtefatoFromString() = %v, want %v", tt.name, got, tt.want)
+			t.Errorf("%q. EstadoArtefatoFromString(%v) = %v, want %v", tt.name, tt.args.literal, got, tt.want)
 		}
 	}
 }
