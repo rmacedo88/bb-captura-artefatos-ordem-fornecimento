@@ -6,18 +6,20 @@ package Report
 
 import (
 	"bb-captura-artefatos-ordem-fornecimento/GitLog"
+	"bb-captura-artefatos-ordem-fornecimento/Logging"
 	"bufio"
 	"os"
 	"strings"
 	"time"
 )
 
-func Relatorio(listaArtefatos map[string][]GitLog.LinhaLog) {
+func Relatorio(listaArtefatos map[string][]GitLog.LinhaLog, chavec string) {
 
 	mesRef := time.Now()
 
 	nomeArquivo := "relatório-" +
-		strings.TrimSuffix(GitLog.Contexto, string(rune(os.PathSeparator))) +
+		//strings.TrimSuffix(GitLog.Contexto, string(rune(os.PathSeparator))) +
+		chavec +
 		"-" +
 		Mes(mesRef.Month()).String() +
 		".txt"
@@ -44,6 +46,14 @@ func Relatorio(listaArtefatos map[string][]GitLog.LinhaLog) {
 		}
 	}
 
-	_ = escritor.Flush()
+	err := escritor.Flush()
+
+	if err == nil {
+		Logging.Info.Println("Relatório produzido com sucesso.")
+		Logging.Info.Printf("Confira as informações no arquivo %s.\n", nomeArquivo)
+	} else {
+		Logging.Error.Fatal("Erro inesperado ao tentar gravar o relatório, por favor tente novamente")
+		return
+	}
 
 }

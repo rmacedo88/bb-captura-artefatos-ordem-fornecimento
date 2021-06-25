@@ -37,3 +37,14 @@ func TestParse(t *testing.T) {
 		}
 	}
 }
+
+func TestInit(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		// TODO: Add test cases.
+	}
+	for range tests {
+		Init()
+	}
+}

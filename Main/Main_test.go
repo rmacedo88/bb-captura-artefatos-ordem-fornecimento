@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"bb-captura-artefatos-ordem-fornecimento/CLI"
+	"reflect"
+	"testing"
+)
 
 func Test_configurarTamanhoHashCommit(t *testing.T) {
 	type args struct {
@@ -25,5 +29,42 @@ func Test_main(t *testing.T) {
 	}
 	for range tests {
 		main()
+	}
+}
+
+func Test_carregarRepositorios(t *testing.T) {
+	type args struct {
+		arquivoListaRepos string
+	}
+	tests := []struct {
+		name string
+		args args
+		want *[]string
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		if got := carregarRepositorios(tt.args.arquivoListaRepos); !reflect.DeepEqual(got, tt.want) {
+			t.Errorf("%q. carregarRepositorios(%v) = %v, want %v", tt.name, tt.args.arquivoListaRepos, got, tt.want)
+		}
+	}
+}
+
+func Test_logPorRepositorio(t *testing.T) {
+	type args struct {
+		parms                   CLI.Parms
+		caminhoRepositorioAtual string
+	}
+	tests := []struct {
+		name string
+		args args
+		want *[]byte
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		if got := logPorRepositorio(tt.args.parms, tt.args.caminhoRepositorioAtual); !reflect.DeepEqual(got, tt.want) {
+			t.Errorf("%q. logPorRepositorio(%v, %v) = %v, want %v", tt.name, tt.args.parms, tt.args.caminhoRepositorioAtual, got, tt.want)
+		}
 	}
 }

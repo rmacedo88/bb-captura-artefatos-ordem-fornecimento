@@ -6,11 +6,9 @@ import (
 )
 
 func TestFrontend(t *testing.T) {
-	tests := []struct {
+	var tests []struct {
 		name string
-		want *CliParms
-	}{
-		// TODO: Add test cases.
+		want *Parms
 	}
 	for _, tt := range tests {
 		if got := Frontend(); !reflect.DeepEqual(got, tt.want) {

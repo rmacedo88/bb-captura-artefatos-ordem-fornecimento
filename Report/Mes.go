@@ -22,6 +22,7 @@ const (
 
 func (estadoEnum Mes) String() string {
 	return [...]string{
+
 		"Janeiro", "Fevereiro", "Março", "Abril",
 		"Maio", "Junho", "Julho", "Agosto",
 		"Setembro", "Outubro", "Novembro", "Dezembro",

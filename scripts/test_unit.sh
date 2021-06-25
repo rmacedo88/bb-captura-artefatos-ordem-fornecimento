@@ -1,16 +1,38 @@
 echo "
 "
 
-echo "  TESTANDO Main/Main.go"
-echo "  test case: configurarTamanhoHashCommit"
-go tool test2json -t /tmp/___Main_test_go.test -test.v -test.paniconexit0 -test.run Test_configurarTamanhoHashCommit
-echo "  test case: main"
-go tool test2json -t /tmp/___Main_test_go.test -test.v -test.paniconexit0 -test.run Test_main
+echo " Testando o pacote Main
+"
+go test -v --short ./Main
 echo "
 "
 
-echo "  TESTANDO GitLog/LinhaLog.go"
-echo "  test case: buildLinhaLog"
-go tool test2json -t /tmp/___Test_buildLinhaLog_in_bb_captura_artefatos_ordem_fornecimento_GitLog.test -test.v -test.paniconexit0 -test.run Test_buildLinhaLog
+echo " Testando o pacote CLI
+"
+go test -v --short ./CLI
+echo "
+"
+
+echo " Testando o pacote Gitlog
+"
+go test -v --short ./GitLog
+echo "
+"
+
+echo " Testando o pacote OrdemFornecimento
+"
+go test -v --short ./OrdemFornecimento
+echo "
+"
+
+echo " Testando o pacote Report
+"
+go test -v --short ./Report
+echo "
+"
+
+echo " Testando o pacote Sys
+"
+go test -v --short ./Sys
 echo "
 "
