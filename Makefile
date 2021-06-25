@@ -1,7 +1,7 @@
 EXECUTABLE=./Bin/captura_artefatos
 WINDOWS=$(EXECUTABLE)_windows_amd64.exe
 LINUX=$(EXECUTABLE)_linux_amd64
-DARWIN=$(EXECUTABLE)_darwin_amd64.dmg
+DARWIN=$(EXECUTABLE)_darwin_amd64
 VERSION=$(shell git describe --tags --always --long --dirty)
 
 .PHONY: all test clean

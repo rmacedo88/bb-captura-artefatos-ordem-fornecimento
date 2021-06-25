@@ -1,3 +1,6 @@
+/**
+- Efetua o parsing de uma linha obtida do log do git
+*/
 package GitLog
 
 import (
@@ -18,7 +21,7 @@ func Test_buildLinhaLog(t *testing.T) {
 	}
 	for _, tt := range tests {
 		if got := buildLinhaLog(tt.args.linha); !reflect.DeepEqual(got, tt.want) {
-			t.Errorf("%q. buildLinhaLog() = %v, want %v", tt.name, got, tt.want)
+			t.Errorf("%q. buildLinhaLog(%v) = %v, want %v", tt.name, tt.args.linha, got, tt.want)
 		}
 	}
 }

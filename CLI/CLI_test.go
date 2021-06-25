@@ -1,3 +1,7 @@
+/**
+- Interface de linha de comando permitindo ajustar a chave, data e diretório de trabalho da OF
+*/
+
 package CLI
 
 import (
@@ -6,9 +10,11 @@ import (
 )
 
 func TestFrontend(t *testing.T) {
-	var tests []struct {
+	tests := []struct {
 		name string
 		want *Parms
+	}{
+		// TODO: Add test cases.
 	}
 	for _, tt := range tests {
 		if got := Frontend(); !reflect.DeepEqual(got, tt.want) {
