@@ -1,5 +1,4 @@
-OUTPUT=./Bin/
-EXECUTABLE=$(OUTPUT)captura_artefatos
+EXECUTABLE=./Bin/captura_artefatos
 WINDOWS=$(EXECUTABLE)_windows_amd64.exe
 LINUX=$(EXECUTABLE)_linux_amd64
 DARWIN=$(EXECUTABLE)_darwin_amd64.dmg
@@ -32,6 +31,3 @@ $(DARWIN):
 
 clean:
 	rm -rf $(WINDOWS) $(LINUX) $(DARWIN)
-
-help:
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

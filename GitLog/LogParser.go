@@ -1,3 +1,6 @@
+/**
+- Efetua o parsing do log obtido do git
+*/
 package GitLog
 
 import (
@@ -9,6 +12,15 @@ import (
 // Contexto (nome do repositório)
 var Contexto string
 
+// Guarda os artefatos que serão usados no relatório final
+var ListaArtefatos map[string][]LinhaLog // := make(map[string][]LinhaLog)
+
+// Inicializa o mapa que deverá guardar os artefatos parseados para gerar somente um relatório
+func Init() {
+	ListaArtefatos = make(map[string][]LinhaLog)
+}
+
+// Determina o nome do contexto de execução - diretório onde o repositório da vez está contido
 func SetContext(contextoExecucao string) {
 	// Recupera a posição do último separador de arquivo
 	ultimoSeparador := strings.LastIndexByte(contextoExecucao, os.PathSeparator)
@@ -16,6 +28,10 @@ func SetContext(contextoExecucao string) {
 	Contexto = contextoExecucao[ultimoSeparador+1:] + string(os.PathSeparator)
 }
 
+/**
+- Efetua o parsing do log obtido do repositório
+- O mapa retornado está depreciado, seu valor é acumulado na variável @ListaArtefatos
+*/
 func Parse(txtLogGit string) *map[string][]LinhaLog {
 
 	// Extrai as linhas do log obtido do repositório
@@ -30,9 +46,6 @@ func Parse(txtLogGit string) *map[string][]LinhaLog {
 
 	// Guarda os artefatos removidos para evitar a inclusão destes no relatório final
 	artefatosRemovidos := make(map[string][]string)
-
-	// Guarda os artefatos que serão usados no relatório final
-	listaArtefatos := make(map[string][]LinhaLog)
 
 	// Armazena o hash do último commit
 	ultimoCommit := ""
@@ -58,14 +71,14 @@ func Parse(txtLogGit string) *map[string][]LinhaLog {
 				_, itemExcluido := artefatosRemovidos[linha.Artefato.String()]
 
 				if !itemExcluido {
-					listaArtefatos[string((linha.EstadoAtf.String()))+"."+linha.Artefato.Tipo] =
-						append(listaArtefatos[string((linha.EstadoAtf.String()))+"."+linha.Artefato.Tipo], *linha)
+					ListaArtefatos[string((linha.EstadoAtf.String()))+"."+linha.Artefato.Tipo] =
+						append(ListaArtefatos[string((linha.EstadoAtf.String()))+"."+linha.Artefato.Tipo], *linha)
 				}
 			}
 		}
 
 	}
 
-	return &listaArtefatos
+	return &ListaArtefatos
 
 }

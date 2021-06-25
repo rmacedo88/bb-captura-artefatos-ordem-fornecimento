@@ -1,3 +1,6 @@
+/**
+- Executa um processo qualqer no sistema operaconal - Usado para executar o git instalado localmente
+*/
 package Sys
 
 import (

@@ -1,3 +1,6 @@
+/**
+- Converte um índice do mês do ano para um texto legível
+*/
 package Report
 
 type Mes byte
@@ -19,6 +22,7 @@ const (
 
 func (estadoEnum Mes) String() string {
 	return [...]string{
+
 		"Janeiro", "Fevereiro", "Março", "Abril",
 		"Maio", "Junho", "Julho", "Agosto",
 		"Setembro", "Outubro", "Novembro", "Dezembro",

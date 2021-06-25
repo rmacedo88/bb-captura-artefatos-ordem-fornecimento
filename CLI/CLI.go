@@ -1,33 +1,39 @@
+/**
+- Interface de linha de comando permitindo ajustar a chave, data e diretório de trabalho da OF
+*/
+
 package CLI
 
 import (
+	"bb-captura-artefatos-ordem-fornecimento/Logging"
 	"flag"
-	"fmt"
 )
 
-type CliParms struct {
-	Path  string
-	Data  string
-	Chave string
+type Parms struct {
+	Arquivo string
+	Data    string
+	Chave   string
 }
 
-func Frontend() *CliParms {
+func Frontend() *Parms {
 
-	path := flag.String("path", "", "Ex.: -path=/home/usuario/kdi/repositorios/sgl-projeto-estatico")
+	arquivo := flag.String("arquivo", "", "Ex.: -arquivo=arquivo_com_a_lista_de_repositorios.txt")
 	data := flag.String("data", "", "Ex.: -data=2021-06-01")
 	chave := flag.String("chave", "", "Ex.: -chave=C1234567")
 
 	flag.Parse()
 
-	if *path == "" || *data == "" || *chave == "" {
-		fmt.Println("Todos os parâmetros são obridatórios, execute novamente informando a opção -h para mais detalhes.")
+	// Valida os parâmetros - todos são obrigatórios
+	if *arquivo == "" || *data == "" || *chave == "" {
+		Logging.Error.Fatal("Todos os parâmetros são obrigatórios, execute novamente informando a opção -h para mais detalhes.")
+		Logging.Error.Println("Dúvidas? https://github.com/rmacedo88/bb-captura-artefatos-ordem-fornecimento#readme")
 		return nil
 	}
 
-	parms := CliParms{
-		Path:  *path,
-		Data:  *data,
-		Chave: *chave,
+	parms := Parms{
+		Arquivo: *arquivo,
+		Data:    *data,
+		Chave:   *chave,
 	}
 
 	return &parms
